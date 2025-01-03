@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机数字展示</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: red; /* 背景色为红色 */
+            font-family: Arial, sans-serif;
+        }
+        #randomNumber {
+            font-size: 10em; /* 字体大小 */
+            color: yellow; /* 字体颜色为黄色 */
+            font-weight: bold; /* 字体加粗 */
+        }
+    </style>
+</head>
+<body>
+    <div id="randomNumber"></div>
+
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const randomNumber = getRandomNumber(0, 20);
+            document.getElementById('randomNumber').textContent = randomNumber;
+        });
+    </script>
+</body>
+</html>
